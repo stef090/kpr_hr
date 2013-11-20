@@ -6,13 +6,15 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Wizard za ispis prometa">
-					<label string="Odaberite pocetni i zavrsni period te poslovnu jedinicu"/>
 					<field name="start_date"/>
 					<field name="end_date"/>
-					<field name="pj_id"/>
-				    <group colspan="4">
+					<field name="pj_id" widget="many2one_list"
+					attrs="{'invisible':['|',('start_date','=',False),('end_date','=',False)]}"/>
+					
+					<field name="pj_ids" nolabel="1"/> 
+					<group colspan="4">
 				    	<button string="Cancel" special="Cancel"/>
-						<button string="Ispis" name="prepare_data(start_date,end_date,pj_id)" type="object"/>				    	
+						<button string="Ispis" name="%(action_promet_print_wizard)d" type="action"/>				    	
 				    </group>						
 				</form>
 			</field>

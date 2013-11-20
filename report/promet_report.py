@@ -24,8 +24,11 @@ from report import report_sxw
 
 class obrt_kpr(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
-        #import pdb;pdb.set_trace()
         super(obrt_kpr, self).__init__(cr, uid, name, context=context)
+        self.localcontext.update({
+            'time': time,
+        })
+        
         
     def prepare_list(self,list_pj):
         list_pj.sort(key=lambda x: x.id, reverse=False)
