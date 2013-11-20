@@ -48,7 +48,7 @@ class obrt_kpr(osv.Model):
                 'gotovina':fields.float('Iznos naplacen u gotovini',(16,2)),
                 'cekovi':fields.float('Iznos naplacen u cekovima',(16,2)),
                 'ukupno':fields.function( _sum_cash_checks, type="float", obj="obrt.kpr", method=True, store=True, string='Ukupno naplacen iznos'),
-                'pj':fields.many2one('obrt.pj','Poslovna jedinica', required=1)
+                'pj_ids':fields.many2one('obrt.pj','Poslovna jedinica', required=1),#TO DO : to be removed as not needed
                 }
     
     def create(self, cr, uid, vals, context=None):
@@ -87,10 +87,6 @@ class obrt_kpr(osv.Model):
         cur_date = cr.fetchone()[0]
         check = self.browse(cr, uid, ids[0], context=context)
         return (check.date >= cur_date) or False
-    '''
-    def check_last_date_button(self,cr,uid,ids,context=None):
-        return self.check_last_date_button(cr, uid, ids, context)
-    '''    
     
     def _check_sum(self, cr, uid, ids, context=None):
         self.assert_check(ids)

@@ -4,7 +4,7 @@
 		
 	
 		<record id="poslovni_tree_view" model="ir.ui.view">
-			<field name="name">Poslovni podaci</field>
+			<field name="name">Podaci o NKD</field>
 			<field name="model">obrt.nkd</field>
 			<field name="priority" eval="100"/>
 			<field name="arch" type="xml">
@@ -22,7 +22,7 @@
             <field name="view_mode">tree</field>
             <field name="view_id" ref="poslovni_tree_view"/>
          </record>
-         <menuitem id="menu_poslovni" action="poslovni_action" name="Poslovni podaci" parent="submenu_obrt" sequence="70"/>
+         <menuitem id="menu_poslovni" action="poslovni_action" name="Podaci NKD" parent="submenu_obrt" sequence="70"/>
          
 <!-- company inherit-->
          	         <record id="view_company_obrt_data" model="ir.ui.view">

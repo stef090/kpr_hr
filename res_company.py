@@ -26,10 +26,11 @@ class obrt_pj(osv.Model):
     _name = 'obrt.pj'
     _description = 'Poslovna jedinica obrta'
     _columns = {
-                'id':fields.integer('ID'),
                 'company_id':fields.many2one('res.company','Obrt'),
                 'name':fields.char('Naziv'),
-                'adresa':fields.char('Adresa')
+                'adresa':fields.char('Adresa'),
+                'kpr_ids':fields.one2many('obrt.kpr','pj_ids','Zapisi knjige prometa')
+                
             }
     
         

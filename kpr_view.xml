@@ -44,6 +44,7 @@
 								<field name="cekovi"/>
 								<field name="ukupno" readonly="1"/>
 							</group>
+							
 							</group>
 						</sheet>				
 					</form>
@@ -68,5 +69,7 @@
 		</record>
          
 		<menuitem id="menu_knjiga_prometa" action="knjiga_prometa_action" name="Knjiga prometa" parent="submenu_obrt" sequence="68"/>
+		<menuitem id="kpr_wizard" action="action_promet_print_wizard" 
+					name="Ispis KPR" string ="Ispis KPR" 	parent="submenu_obrt" sequence="199"/>
 	</data>
 </openerp>
