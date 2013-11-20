@@ -27,8 +27,8 @@
 				<field name="priority" eval="61"/>
 				<field name="arch" type="xml">
 					<form string="Knjiga prometa" version="7.0">
+						<button string="Ispis prometa(wizard)" type="action" name="%(action_promet_print_wizard)d"/>
 						<sheet>
-							
 							<header>
 								<!--<button string="Provjeri datum" type="object" action="check_last_date_button"/>-->
 							</header>
