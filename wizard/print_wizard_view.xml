@@ -1,0 +1,30 @@
+<openerp>
+	<data>
+		<record id="promet_print_wizard" model="ir.ui.view">
+			<field name="name">promet.print.wizard.form</field>
+			<field name="model">promet.print.wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Wizard za ispis prometa">
+					<label string="Odaberite pocetni i zavrsni period te poslovnu jedinicu"/>
+					<field name="start_date"/>
+					<field name="end_date"/>
+					<field name="pj_id"/>
+				    <group colspan="4">
+				    	<button string="Cancel" special="Cancel"/>
+						<button string="Ispis" name="prepare_data(start_date,end_date,pj_id)" type="object"/>				    	
+				    </group>						
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_promet_print_wizard" model="ir.actions.act_window"> 
+			<field name="name">Ispis prometa(wizard)</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">promet.print.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

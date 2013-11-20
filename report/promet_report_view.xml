@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+        <data>
+                <report
+                        id="promet_report"
+                        string="Ispis prometa"
+                        model="obrt.kpr"
+                        name="obrt.kpr"
+                        rml="obrt_kpr/report/promet_report.rml"
+                        auto="False"
+                        header="False"
+                 />
+        </data>
+</openerp>

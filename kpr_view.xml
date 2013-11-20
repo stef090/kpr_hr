@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<menuitem id="menu_obrt" name="Obrt" sequence="10"/> 
+		<menuitem id="submenu_obrt" name="Obrt" sequence="12" parent="menu_obrt"/>
+		
+		<record id="knjiga_prometa_tree_view" model="ir.ui.view">
+			<field name="name">knjiga_prometa_tree_view</field>
+			<field name="model">obrt.kpr</field>
+			<field name="priority" eval="60"/>
+			<field name="arch" type="xml">
+				<tree string="Knjiga prometa" delete="false">
+					<field name="rbr" readonly="1"/>
+					<field name="pj"/>
+					<field name="date"/>
+					<field name="opis"/>
+					<field name="gotovina" />
+					<field name="cekovi" />
+					<field name="ukupno" readonly="1"/>
+				</tree>
+			</field>
+		</record>
+			
+			<record id="knjiga_prometa_form_view" model="ir.ui.view">
+				<field name="name">knjiga_prometa_form_view</field>
+				<field name="model">obrt.kpr</field>
+				<field name="priority" eval="61"/>
+				<field name="arch" type="xml">
+					<form string="Knjiga prometa" version="7.0">
+						<sheet>
+							
+							<header>
+								<!--<button string="Provjeri datum" type="object" action="check_last_date_button"/>-->
+							</header>
+							<field name="pj" widget="selection" options='{"always_reload": True}'/>
+							<group colspan="4" cols="4" >
+							<group string="Info">
+								<field name="rbr" readonly="1"/>
+								<field name="date"/>
+								<field name="opis"/>
+							</group>
+							<group string="Iznosi">	
+								<field name="gotovina"/>
+								<field name="cekovi"/>
+								<field name="ukupno" readonly="1"/>
+							</group>
+							</group>
+						</sheet>				
+					</form>
+				</field>
+			</record>
+			
+		 <record id="knjiga_prometa_action" model="ir.actions.act_window">
+            <field name="name">Knjiga prometa</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">obrt.kpr</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="knjiga_prometa_tree_view"/>
+         </record>
+         
+         <record id="action_promet_print_wizard" model="ir.actions.act_window"> 
+			<field name="name">Ispis prometa(wizard)</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">promet.print.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+         
+		<menuitem id="menu_knjiga_prometa" action="knjiga_prometa_action" name="Knjiga prometa" parent="submenu_obrt" sequence="68"/>
+	</data>
+</openerp>

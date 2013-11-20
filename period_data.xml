@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+    	<record id="period1" model="obrt.period">
+    		<field name="name">Kvartal 1</field>
+			<field name="date_start">2013-1-1</field>
+			<field name="date_end">2013-3-31</field>
+			<field name="closed">True</field>
+     	</record>
+     	<record id="period2" model="obrt.period">
+    		<field name="name">Kvartal 2</field>
+			<field name="date_start">2013-4-1</field>
+			<field name="date_end">2013-6-30</field>
+     	</record>
+     	<record id="period3" model="obrt.period">
+    		<field name="name">Kvartal 3</field>
+			<field name="date_start">2013-7-1</field>
+			<field name="date_end">2013-9-30</field>
+     	</record>
+     	<record id="period4" model="obrt.period">
+    		<field name="name">Kvartal 4</field>
+			<field name="date_start">2013-10-1</field>
+			<field name="date_end">2013-12-31</field>
+     	</record>
+    </data>
+</openerp>

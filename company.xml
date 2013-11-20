@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+	
+		<record id="poslovni_tree_view" model="ir.ui.view">
+			<field name="name">Poslovni podaci</field>
+			<field name="model">obrt.nkd</field>
+			<field name="priority" eval="100"/>
+			<field name="arch" type="xml">
+				<tree string="Nacionalna klasifikacija djelatnosti" editable="bottom">
+					<field name="code"/>
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+			
+		 <record id="poslovni_action" model="ir.actions.act_window">
+            <field name="name">Poslovni podaci</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">obrt.nkd</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="poslovni_tree_view"/>
+         </record>
+         <menuitem id="menu_poslovni" action="poslovni_action" name="Poslovni podaci" parent="submenu_obrt" sequence="70"/>
+         
+<!-- company inherit-->
+         	         <record id="view_company_obrt_data" model="ir.ui.view">
+            <field name="name">view.company.obrt.data</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+            	<notebook position="inside">
+	                <page string="Obrt podaci">
+						<group>
+							<field name="nkd_id" />
+							<field name="obrt_pj_ids" />			        		
+                        </group>
+	                </page>
+                </notebook>
+            </field>
+        </record>   
+         
+		
+		
+	</data>
+</openerp>
