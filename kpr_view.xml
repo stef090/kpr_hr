@@ -79,7 +79,9 @@
 				  name="Ispis KPR" 
 			      string ="Ispis KPR" 	
 				  parent="submenu_obrt" 
-			 	  sequence="199"/>	         
+			 	  sequence="199"/>	   
+			 	  	
+		          
          
 	</data>
 </openerp>

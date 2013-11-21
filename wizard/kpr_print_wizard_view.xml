@@ -1,0 +1,38 @@
+<openerp>
+	<data>
+		<record id="action_kpr_print_wizard" model="ir.actions.act_window"> 
+			<field name="name">Ispis prometa 2</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">kpr.obrt.pj</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<record id="kpr_promet_print_wizard" model="ir.ui.view">
+			<field name="name">kpr.promet.print.wizard.form</field>
+			<field name="model">kpr.obrt.pj</field>
+			<field name="arch" type="xml">
+				<form string="Wizard za ispis prometa">
+					<field name="date_start"/>
+					<field name="date_end"/>
+					<field name="pj_ids"/> 
+					<group colspan="4">
+						<button	string="Ispis" 
+							name="kpr_print" type="object" class="oe_highlight" 
+						attrs="{'invisible':['|',('date_start','=',False),('date_end','=',False)]}"/>
+				    	<button string="Cancel" special="Cancel"/>  
+				    </group>						
+				</form>
+			</field>
+		</record>
+		
+		<menuitem id="kpr_wizard" 
+				  action="action_kpr_print_wizard" 
+				  name="Ispis KPR v2" 
+			      string ="Ispis KPR v2" 	
+				  parent="submenu_obrt" 
+			 	  sequence="200"/>	    
+		
+	</data>
+</openerp>

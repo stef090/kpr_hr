@@ -50,9 +50,8 @@ prema u racunovodstvu u RH. Namijenjeno obrtnicima.
                    'nkd_data.xml',
                    'period_data.xml',
                    'wizard/print_wizard_view.xml',
+                   'wizard/kpr_print_wizard_view.xml',
                    'report/promet_report_view.xml',
-                   
-                   
                    ],
     "active": False,
     "installable": True,

@@ -1,1 +1,2 @@
 import print_wizard
+import kpr_print_wizard

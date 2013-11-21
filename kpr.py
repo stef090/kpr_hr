@@ -55,7 +55,7 @@ class obrt_kpr(osv.Model):
         if context is None:
             context = {}
         
-        cr.execute("SELECT MAX(rbr) FROM obrt_kpr WHERE pj = " + str(vals['pj']))
+        cr.execute("SELECT MAX(rbr) FROM obrt_kpr WHERE pj_ids = " + str(vals['pj_ids']))
         rbr = cr.fetchone()
         if rbr[0] is None:
             vals['rbr'] = 1
