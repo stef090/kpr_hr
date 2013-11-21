@@ -24,8 +24,8 @@
 #
 ##############################################################################
 
-import kpr
 import res_company
+import kpr
 import period
 import wizard
 import report

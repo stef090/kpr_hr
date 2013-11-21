@@ -44,13 +44,15 @@ prema u racunovodstvu u RH. Namijenjeno obrtnicima.
     "category" : "Accounting",
     'depends': [],
     'update_xml': [
+                   'res_company_view.xml',
                    'kpr_view.xml',
                    'period_view.xml',
-                   'company.xml',
                    'nkd_data.xml',
                    'period_data.xml',
+                   'wizard/print_wizard_view.xml',
                    'report/promet_report_view.xml',
-                   'wizard/print_wizard_view.xml'
+                   
+                   
                    ],
     "active": False,
     "installable": True,
