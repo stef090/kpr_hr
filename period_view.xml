@@ -8,10 +8,10 @@
 			<field name="priority" eval="1"/>
 			<field name="arch" type="xml">
 				<tree string="Periodi" editable="bottom">
-					<field name="name"/>
-					<field name="date_start"/>
-					<field name="date_end"/>
-					<field name="closed"/>
+					<field name="name" attrs="{'readonly':[('closed','=',True)]}"/>
+					<field name="date_start" attrs="{'readonly':[('closed','=',True)]}"/>
+					<field name="date_end" attrs="{'readonly':[('closed','=',True)]}"/>
+					<field name="closed" attrs="{'readonly':[('closed','=',True)]}"/>
 				</tree>
 			</field>
 		</record>
