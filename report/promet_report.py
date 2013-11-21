@@ -38,7 +38,7 @@ class obrt_kpr(report_sxw.rml_parse):
 report_sxw.report_sxw(
     'report.obrt.kpr',
     'obrt.kpr',
-    'l10n_hr_obrt/obrt_kpr/report/promet_report.rml',
+    'l10n_hr_obrt/obrt_kpr/report/promet_report2.rml',
     parser=obrt_kpr,
     header = False
 )

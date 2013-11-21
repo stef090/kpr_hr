@@ -61,6 +61,7 @@
       <lineStyle kind="LINEAFTER" colorName="#000000" start="6,0" stop="6,-1"/>
       <lineStyle kind="LINEABOVE" colorName="#000000" start="6,0" stop="6,0"/>
       <lineStyle kind="LINEBELOW" colorName="#000000" start="6,-1" stop="6,-1"/>
+      <lineStyle kind="GRID" colorName="black" thickness="1" start="0,0" stop="-1,-1"/>
     </blockTableStyle>
     <initialize>
       <paraStyle name="all" alignment="justify"/>
@@ -75,26 +76,9 @@
     <images/>
   </stylesheet>
   <story>
-    <para style="Standard">[[repeatIn(objects,'o')]]</para>
     <para style="Standard">
       <font color="white"> </font>
     </para>
-    
-    <para style="Standard">Naziv obrta: [[ o.pj_ids.company_id.name ]]</para>
-    <para style="Standard">OIB: [[ o.pj_ids.company_id.company_registry ]]</para>
-    <para style="Standard">
-      <font color="white"> </font>
-    </para>
-    <para style="Standard">[[repeatIn(objects.pj_ids, 'p')]]</para>
-    <para style="Standard">Naziv: [[o.pj_ids.name]]</para>
-    <para style="Standard">Adresa poslovne jedinice: [[ o.pj_ids.adresa ]], [[ o.pj_ids.company_id.city ]]</para>
-    <para style="Standard">
-      <font color="white"> </font>
-    </para>
-    <para style="Standard">
-      <font color="white"> </font>
-    </para>
-   
     
     <blockTable colWidths="69.0,69.0,69.0,69.0,69.0,69.0,69.0" style="Table1">
       <tr>
@@ -121,7 +105,7 @@
         </td>
       </tr>
     </blockTable>
-    <blockTable colWidths="69.0,69.0,69.0,69.0,69.0,69.0,69.0" style="Table2">
+    <blockTable colWidths="69.0,69.0,69.0,69.0,69.0,69.0,69.0" style="Table2" border="1">
       <tr>
         <td>
           [[repeatIn(objects,'o')]]
@@ -145,6 +129,8 @@
         <td>
           <para style="Table_20_Contents">[[o.ukupno]]</para>
         </td>
+       <hr>
+      </hr>
       </tr>
     </blockTable>
     <para style="Standard">

@@ -6,7 +6,7 @@
                         string="Ispis prometa"
                         model="obrt.kpr"
                         name="obrt.kpr"
-                        rml="obrt_kpr/report/promet_report.rml"
+                        rml="obrt_kpr/report/promet_report2.rml"
                         auto="False"
                         header="False"
                  />
