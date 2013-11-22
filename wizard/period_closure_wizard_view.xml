@@ -1,0 +1,31 @@
+<openerp>
+	<data>
+		<record id="period_closure_wizard_view" model="ir.ui.view">
+			<field name="name">period_closure_wizard_view</field>
+            <field name="model">period.closure.wizard</field>
+            <field name="arch" type="xml">
+				<form string = "Zatvaranje perioda">
+					<field name = "period_ids"/>
+					<button string = "Cancel" special="Cancel"/>
+					<button string = "Zatvori odabrani period" type="object" name="close_period" 
+					attrs="{'invisible':[('period_ids','=',False)]}"/> 					
+				</form>
+			</field>
+        </record>
+        <record id="period_closure_wizard_action" model="ir.actions.act_window">
+            <field name="name">Zatvaranje perioda</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">period.closure.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem id="period_closure_wizard" 
+				  action="period_closure_wizard_action" 
+				  name="Zatvaranje perioda" 
+			      string ="Zatvaranje perioda" 	
+				  parent="menu_periodi" 
+			 	  sequence="201"/>	 
+	</data>
+</openerp>

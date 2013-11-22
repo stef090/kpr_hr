@@ -1,2 +1,3 @@
-import print_wizard
-import kpr_print_wizard
+#import print_wizard
+#import kpr_print_wizard
+import period_closure_wizard

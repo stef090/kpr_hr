@@ -31,6 +31,37 @@
             <field name="view_id" ref="poslovni_tree_view"/>
          </record>
          
+        <record id="obrt_pos_jedinice_tree_view" model="obrt.pj">
+        	<field name="name">Poslovne jedinice</field>
+			<field name="model">obrt.pj</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+        		<tree string="Poslovne jedinice">
+        			<field name="name"/>
+        			<field name="adresa"/>
+        		</tree>
+        	</field>
+        </record>
+        <record id="obrt_pos_jedinice_form_view" model="obrt.pj">
+        	<field name="name">Poslovne jedinice</field>
+			<field name="model">obrt.pj</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+        		<form string="Poslovne jedinice">
+        			<field name="name"/>
+        			<field name="adresa"/>
+        			<field name="Knjiga prometa">
+        				<tree string="KPR">
+        					<field name="date"/>
+        					<field name="opis"/>
+        					<field name="gotovina"/>
+        					<field name="cekovi"/>
+        					<field name="ukupno" sum="ukupno"/>
+        				</tree>
+        			</field>
+        		</form>
+        	</field>
+        </record>
          
 <!-- company inherit-->
          <record id="view_company_obrt_data" model="ir.ui.view">
