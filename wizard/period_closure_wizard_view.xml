@@ -6,7 +6,7 @@
             <field name="arch" type="xml">
 				<form string = "Zatvaranje perioda">
 					<field name = "period_ids"/>
-					<button string = "Cancel" special="Cancel"/>
+					<button string = "Cancel" special="cancel" class="oe_link"/>
 					<button string = "Zatvori odabrani period" type="object" name="close_period" 
 					attrs="{'invisible':[('period_ids','=',False)]}"/> 					
 				</form>

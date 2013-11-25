@@ -112,10 +112,10 @@
           <para style="Table_20_Contents">[[ o.rbr ]]</para>
         </td>
         <td>
-          <para style="Table_20_Contents">[[ o.pj_ids.name ]]</para>
+          <para style="Table_20_Contents">[[ o.pj_id.name ]]</para>
         </td>
         <td>
-          <para style="Table_20_Contents">[[o.opis]]</para>
+          <para style="Table_20_Contents">[[o.name]]</para>
         </td>
         <td>
           <para style="Table_20_Contents">[[o.date]]</para>

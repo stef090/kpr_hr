@@ -17,6 +17,15 @@ class period_closure_wizard(osv.TransientModel):
                 }
     
     def close_period(self, cr, uid, period, context=None):
-        pass
-        return self.pool.get('obrt.period').write(cr, uid, period, {'closed':'true'})
+        self.pool.get('obrt.period').write(cr, uid, period, {'closed':'true'})
+        return {
+                'type': 'ir.actions.act_window',
+                'name': 'Period knjige prometa',
+                'res_model': 'obrt.period',
+                'view_type': 'tree',
+                'view_mode': 'tree',
+                'view_id': 178,
+                'target': 'current',
+                'nodestroy': True,
+                }
     
