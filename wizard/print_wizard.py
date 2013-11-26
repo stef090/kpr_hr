@@ -1,3 +1,4 @@
+'''
 from osv import fields, osv
 import datetime
 
@@ -13,8 +14,8 @@ class print_wizard(osv.TransientModel):
     
     _columns = {'start_date':fields.date('Pocetni datum'),
                 'end_date':fields.date('Zavrsni datum'),
-                'pj_id':fields.many2one('obrt.pj','Poslovna jedinica'),
-                'pj_ids':fields.many2many('obrt.pj.wiz','com_kpr_rel','pj_ids','kpr_ids','Poslovne jedinice za izvjestaj')
+                #'pj_id':fields.many2one('obrt.pj','Poslovna jedinica'),
+                #'pj_ids':fields.many2many('obrt.pj.wiz','com_kpr_rel','pj_ids','kpr_ids','Poslovne jedinice za izvjestaj')
                 }
 
 
@@ -34,4 +35,4 @@ class print_wizard(osv.TransientModel):
                 'report_name' : 'obrt.kpr',
                 'res' : res,
                 }
-        
+      '''  

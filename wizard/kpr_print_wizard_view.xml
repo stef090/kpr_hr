@@ -16,7 +16,6 @@
 				<form string="Wizard za ispis prometa">
 					<field name="date_start"/>
 					<field name="date_end"/>
-					<field name="pj_ids"/> 
 					<group colspan="4">
 						<button	string="Ispis" 
 							name="kpr_print" type="object" class="oe_highlight" 

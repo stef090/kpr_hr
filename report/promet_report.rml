@@ -75,34 +75,32 @@
     <images/>
   </stylesheet>
   <story>
-    <para style="Standard">[[repeatIn(objects,'o')]]</para>
+    <para style="Standard">[[repeatIn(objects.pj_id,'p')]]</para>
+    <section>
     <para style="Standard">
       <font color="white"> </font>
     </para>
-    
-    <para style="Standard">Naziv obrta: [[ o.pj_ids.company_id.name ]]</para>
-    <para style="Standard">OIB: [[ o.pj_ids.company_id.company_registry ]]</para>
+    <para style="Standard">Naziv obrta: [[ p.company_id.name ]]</para>
+    <para style="Standard">OIB: [[ p.company_id.company_registry ]]</para>
     <para style="Standard">
       <font color="white"> </font>
     </para>
-    <para style="Standard">[[repeatIn(objects.pj_ids, 'p')]]</para>
-    <para style="Standard">Naziv: [[o.pj_ids.name]]</para>
-    <para style="Standard">Adresa poslovne jedinice: [[ o.pj_ids.adresa ]], [[ o.pj_ids.company_id.city ]]</para>
+    <para style="Standard"></para>
+    <para style="Standard">Naziv: [[p.name]]</para>
+    <para style="Standard">Adresa poslovne jedinice: [[ p.adresa ]], [[ p.company_id.city ]]</para>
     <para style="Standard">
       <font color="white"> </font>
     </para>
+    </section>
     <para style="Standard">
       <font color="white"> </font>
     </para>
    
     
-    <blockTable colWidths="69.0,69.0,69.0,69.0,69.0,69.0,69.0" style="Table1">
+    <blockTable colWidths="69.0,69.0,69.0,69.0,69.0,69.0" style="Table1">
       <tr>
         <td>
           <para style="Table_20_Contents">Rbr.</para>
-        </td>
-        <td>
-          <para style="Table_20_Contents">Poslovna jedinica</para>
         </td>
         <td>
           <para style="Table_20_Contents">Opis isprava o plaćanju</para>
@@ -121,17 +119,14 @@
         </td>
       </tr>
     </blockTable>
-    <blockTable colWidths="69.0,69.0,69.0,69.0,69.0,69.0,69.0" style="Table2">
+    <blockTable colWidths="69.0,69.0,69.0,69.0,69.0,69.0" style="Table2">
       <tr>
         <td>
           [[repeatIn(objects,'o')]]
           <para style="Table_20_Contents">[[ o.rbr ]]</para>
         </td>
         <td>
-          <para style="Table_20_Contents">[[ o.pj_ids.name ]]</para>
-        </td>
-        <td>
-          <para style="Table_20_Contents">[[o.opis]]</para>
+          <para style="Table_20_Contents">[[o.name]]</para>
         </td>
         <td>
           <para style="Table_20_Contents">[[o.date]]</para>

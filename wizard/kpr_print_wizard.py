@@ -25,7 +25,7 @@ class kpr_obrt_pj(osv.osv_memory):
     _columns = {
                 'date_start':fields.date('Pocetni datum'),
                 'date_end':fields.date('Zavrsni datum'),
-                'pj_ids':fields.selection(_get_pj, 'Poslovne jedinice')
+                #'pj_ids':fields.selection(_get_pj, 'Poslovne jedinice')
                 }
     
     def kpr_print(self, cr, uid, date_start, date_end, pj_ids=None, context=None):

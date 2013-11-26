@@ -7,9 +7,7 @@
 			<field name="arch" type="xml">
 				<form string="Wizard za ispis prometa">
 					<field name="start_date"/>
-					<field name="end_date"/>
-					<field name="pj_id" widget="many2one_list"
-					attrs="{'invisible':['|',('start_date','=',False),('end_date','=',False)]}"/>
+					<field name="end_date"/>>
 					
 					<field name="pj_ids" nolabel="1"/> 
 					<group colspan="4">
