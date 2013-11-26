@@ -20,19 +20,30 @@
 ##############################################################################
 
 import time
+import datetime
 from report import report_sxw
 
 class obrt_kpr(report_sxw.rml_parse):
+    
+    def format_date(self, date):
+        cur_format = "%Y-%m-%d"
+        new_format = "%d.%m.%Y"
+        date_tuple = datetime.datetime.strptime(date, cur_format)
+        return date_tuple.strftime(new_format)
+    
     def __init__(self, cr, uid, datas, context):
         super(obrt_kpr, self).__init__(cr, uid, datas, context=context)
         self.localcontext.update({
             'time': time,
+            'format_date': self.format_date
         })
         
         
     def prepare_list(self,list_pj):
         list_pj.sort(key=lambda x: x.id, reverse=False)
         return list_pj
+    
+    
         
         
 report_sxw.report_sxw(
