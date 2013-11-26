@@ -87,5 +87,7 @@
 				  parent="submenu_obrt" 
 			      sequence="70"/>
 		
+
+			      			
 	</data>
 </openerp>
