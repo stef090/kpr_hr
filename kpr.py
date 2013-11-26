@@ -39,15 +39,20 @@ class obrt_kpr(osv.Model):
         for kpr in self.browse(cr, uid, ids):
             res[kpr.id] = kpr.gotovina + kpr.cekovi 
         return res
-    '''
+    
     def _get_last_used_pj(self, cr, uid, context=None):
+        #fields_ = fields_view_get(self, cr, uid)
         cr.execute("SELECT MAX(id) FROM obrt_kpr")
-        last_pr = cr.fetchone()[0]
+        last_pj = cr.fetchone()[0]
+        if last_pj is None:
+            last_pj = self.pool.get('obrt.pj').search(cr, uid, [])[0]
+        else : 
+            last_pj = self.read(cr, uid, last_pj, ['pj_id'])['pj_id'][0]
         #pj=self.read(cr, uid, last_pr, ['pj_id'])
         #return pj['pj_id'][0]
         #B: skratio i vratio kao default
-        return self.read(cr, uid, last_pr, ['pj_id'])['pj_id'][0]
-       ''' 
+        return last_pj
+        
         
     _columns = {
                 'rbr':fields.integer('Red. broj'),
@@ -60,6 +65,7 @@ class obrt_kpr(osv.Model):
                 'pj_id':fields.many2one('obrt.pj','Poslovna jedinica', required=1, ondelete='restrict'),
                 }
     
+    _order = 'date asc'
     
     '''
     _defaults = {

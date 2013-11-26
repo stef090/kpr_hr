@@ -37,3 +37,7 @@ class obrt_period(osv.Model):
               'date_end':fields.date('Zavrsni datum'),
               'closed':fields.boolean('Period zatvoren')
               }
+    
+    def close_period(self, cr, uid, ids, context=None):
+        self.pool.get('obrt.period').write(cr, uid, ids[0],{'closed':'True'})
+        return True

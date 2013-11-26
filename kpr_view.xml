@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<!--
+<!-- 
          <record id="action_promet_print_wizard" model="ir.actions.act_window"> 
 			<field name="name">Ispis prometa(wizard)</field>
 			<field name="type">ir.actions.act_window</field>
@@ -10,7 +10,7 @@
 			<field name="view_mode">form</field>
 			<field name="target">new</field>
 		</record>
-         		-->
+      -->    		
 		<record id="knjiga_prometa_tree_view" model="ir.ui.view">
 			<field name="name">knjiga_prometa_tree_view</field>
 			<field name="model">obrt.kpr</field>
@@ -27,18 +27,19 @@
 				</tree>
 			</field>
 		</record>
-			
-			<record id="knjiga_prometa_form_view" model="ir.ui.view">
+		<record id="knjiga_prometa_form_view" model="ir.ui.view">
 				<field name="name">knjiga_prometa_form_view</field>
 				<field name="model">obrt.kpr</field>
 				<field name="priority" eval="61"/>
 				<field name="arch" type="xml">
 					<form string="Knjiga prometa" version="7.0">
 						<header>
+						
 						</header>
 						<sheet>
 							<label for="pj_id"/>
 							<field name="pj_id" widget="selection" options='{"always_reload": True}' class="oe_inline"/>
+							
 							<group colspan="4" cols="4" >
 							<group string="Info">
 								<field name="rbr" readonly="1"/>
@@ -61,8 +62,9 @@
 			<field name="name">knjiga_prometa_filter</field>
 			<field name="model">obrt.kpr</field>
 			<field name="arch" type="xml">
-				<search string="Pretrazi knjigu prometa">
+				<search string="Pretraži knjigu prometa">
 					<field name="name" filter_domain="['|',('name','ilike',self),('pj_id','ilike',self)]" />
+					
 					<group expand="0" string="Group By...">
 						<filter string="Poslovna jedinica" context="{'group_by':'pj_id'}" />
 					</group>
@@ -86,14 +88,53 @@
 				  parent="submenu_obrt" 
 				  sequence="68"/>
 		 
-		<!--
+		 <!-- V2 knjige šprometa -->
+		 <record id="knjiga_prometa_tree_view_2" model="ir.ui.view">
+			<field name="name">knjiga_prometa_tree_view</field>
+			<field name="model">obrt.kpr</field>
+			<field name="priority" eval="61"/>
+			<field name="arch" type="xml">
+				<tree string="Knjiga prometa" editable="top" delete="false">
+					<field name="rbr" readonly="1"/>
+					<field name="pj_id"/>
+					<field name="date"/>
+					<field name="name"/>
+					<field name="gotovina" />
+					<field name="cekovi" />
+					<field name="ukupno" readonly="1"/>
+				</tree>
+			</field>
+		</record>
+		<record id="knjiga_prometa_action_2" model="ir.actions.act_window">
+            <field name="name">Knjiga prometa</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">obrt.kpr</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="knjiga_prometa_tree_view_2"/>
+         </record>
+			
+			
+		 <menuitem id="menu_knjiga_prometa_2" 
+				  action="knjiga_prometa_action_2" 
+				  name="Knjiga prometa v2" 
+				  parent="submenu_obrt" 
+				  sequence="68"/>
+				  
+				  
+		<!-- Verzija defaultiranja prema davoru iz PJ view!-->		  
+		
+         
+         <!-- action="pj_select_action" -->
+         <!-- action="knjiga_prometa_action_pj"  -->
+         
+		<!-- 
 		<menuitem id="kpr_wizard" 
 				  action="action_promet_print_wizard" 
 				  name="Ispis KPR" 
 			      string ="Ispis KPR" 	
 				  parent="submenu_obrt" 
 			 	  sequence="199"/>	   
-		-->	 	  	
+			  -->	  	
 		          
          
 	</data>

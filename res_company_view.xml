@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		
-		<menuitem id="menu_obrt" 
-				  name="Obrt" 
-				  sequence="10"/> 
-		
-		<menuitem id="submenu_obrt" 
-				  name="Obrt" 
-				  sequence="12" 
-				  parent="menu_obrt"/>
+		<menuitem id="menu_obrt" name="Obrt" sequence="10"/> 
+		<menuitem id="submenu_obrt" name="Obrt" parent="menu_obrt"/>
 		
 		<record id="poslovni_tree_view" model="ir.ui.view">
 			<field name="name">Podaci o NKD</field>
@@ -31,7 +24,7 @@
             <field name="view_id" ref="poslovni_tree_view"/>
          </record>
          
-        <record id="obrt_pos_jedinice_tree_view" model="obrt.pj">
+        <record id="obrt_pos_jedinice_tree_view" model="ir.ui.view">
         	<field name="name">Poslovne jedinice</field>
 			<field name="model">obrt.pj</field>
 			<field name="priority" eval="16"/>
@@ -50,10 +43,10 @@
         		<form string="Poslovne jedinice">
         			<field name="name"/>
         			<field name="adresa"/>
-        			<field name="Knjiga prometa">
+        			<field name="kpr_ids">
         				<tree string="KPR">
         					<field name="date"/>
-        					<field name="opis"/>
+        					<field name="name"/>
         					<field name="gotovina"/>
         					<field name="cekovi"/>
         					<field name="ukupno" sum="ukupno"/>

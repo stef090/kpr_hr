@@ -51,6 +51,7 @@ prema u racunovodstvu u RH. Namijenjeno obrtnicima.
                    'period_data.xml',
                    'wizard/period_closure_wizard_view.xml',
                    #'wizard/kpr_print_wizard_view.xml',
+                   'wizard/pj_select_wizz_view.xml',
                    'report/promet_report_view.xml',
                    ],
     "active": False,

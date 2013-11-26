@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="pj_select_action" model="ir.actions.act_window"> 
+			<field name="name">pj_select_action</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wizz.pj.sel</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<record id="knjiga_prometa_form_view_pj" model="ir.ui.view">
+			<field name="name">Upis u knjigu prometa</field>
+			<field name="model">obrt.pj</field>
+			<field name="priority" eval="61"/>
+			<field name="arch" type="xml">
+				<form string="Knjiga prometa za poslovnicu" delete="false" create="false" version="7.0">
+					<header>
+					<button type="action" name="%(pj_select_action)s" string="Odabir jedinice" />
+					</header>
+					<sheet>
+					<label for="name" string="Aktivna poslovna jedinica" readonly="1"/>
+					<field name="name" class="oe_inline" />
+					
+					<field name="kpr_ids" nolabel="1">
+						<tree name="primici" editable="top">
+							<field name="date"/>
+							<field name="name"/>
+							<field name="gotovina"/>
+							<field name="cekovi"/>
+						</tree>
+					</field>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="knjiga_prometa_action_pj" model="ir.actions.act_window">
+            <field name="name">Knjiga prometa (PJ)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">obrt.pj</field>
+            <field name="view_mode">form, tree</field>
+            <field name="view_id" ref="knjiga_prometa_form_view_pj"/>
+            
+         </record>
+		
+		<record id="pj_select_wizard" model="ir.ui.view">
+			<field name="name">pj.select.wizard</field>
+			<field name="model">wizz.pj.sel</field>
+			<field name="arch" type="xml">
+				<form string="Odabir parametara KPR">
+					<field name="naziv"/>
+					<group colspan="4" col="4" attrs="{'invisible':[('naziv','=',False)]}">
+						<field name="date_start"/>
+						<field name="date_end"/>
+					</group>
+					<separator/>
+					<button type="object" name="open_selected" string="Odaberi" attrs="{'invisible':[('naziv','=',False)]}" />
+					<button string="Cancel" special="cancel"/>				
+				</form>
+			</field>
+		</record>
+		
+		<menuitem id="menu_knjiga_prometa_pj" 
+				  action="pj_select_action"
+				  name="Knjiga prometa PJ" 
+				  parent="submenu_obrt" 
+				  sequence="68"/>
+	</data>
+</openerp>
