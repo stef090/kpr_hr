@@ -52,8 +52,8 @@
 				<form string="Odabir parametara KPR">
 					<field name="naziv"/>
 					<group colspan="4" col="4" attrs="{'invisible':[('naziv','=',False)]}">
-						<field name="date_start"/>
-						<field name="date_end"/>
+						<!--<field name="date_start"/>
+						<field name="date_end"/>-->
 					</group>
 					<separator/>
 					<button type="object" name="open_selected" string="Odaberi" attrs="{'invisible':[('naziv','=',False)]}" />

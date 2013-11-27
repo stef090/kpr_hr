@@ -84,7 +84,7 @@ class obrt_pj(osv.Model):
         root = xml_form.getroottree()
         res = etree.tostring(root)
         return res
-    
+    '''
     def create(self, cr, uid, vals, context=None):
         if context == None : 
             context={}
@@ -96,4 +96,4 @@ class obrt_pj(osv.Model):
         #new_search_xml= '<?xml version="1.0"?>' + new_search_xml
         #view_obj.write(cr, uid, filter_id, {'arch':new_search_xml})
         return res
-    
+    '''

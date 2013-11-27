@@ -18,13 +18,15 @@ class period_closure_wizard(osv.TransientModel):
     
     def close_period(self, cr, uid, period, context=None):
         self.pool.get('obrt.period').write(cr, uid, period, {'closed':'true'})
+        view_ref = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'obrt_kpr', 'periodi_tree_view')
+        view_id = view_ref and view_ref[1] or False
         return {
                 'type': 'ir.actions.act_window',
                 'name': 'Period knjige prometa',
                 'res_model': 'obrt.period',
                 'view_type': 'tree',
                 'view_mode': 'tree',
-                'view_id': 178,
+                'view_id': view_id,
                 'target': 'current',
                 'nodestroy': True,
                 }

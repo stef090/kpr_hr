@@ -29,13 +29,13 @@
 			<field name="model">obrt.pj</field>
 			<field name="priority" eval="16"/>
 			<field name="arch" type="xml">
-        		<tree string="Poslovne jedinice">
+        		<tree string="Poslovne jedinice" editable="top">
         			<field name="name"/>
         			<field name="adresa"/>
         		</tree>
         	</field>
         </record>
-        <record id="obrt_pos_jedinice_form_view" model="obrt.pj">
+        <record id="obrt_pos_jedinice_form_view" model="ir.ui.view">
         	<field name="name">Poslovne jedinice</field>
 			<field name="model">obrt.pj</field>
 			<field name="priority" eval="16"/>
@@ -80,7 +80,15 @@
 				  parent="submenu_obrt" 
 			      sequence="70"/>
 		
-
+		
 			      			
+	</data>
+	<data noupdate="1">
+		<record id="pj1" model="obrt.pj">
+    		<field name="name">Obrt PJ 1</field>
+			<field name="adresa">Blabla 25</field>
+			<field name="company_id" ref="base.main_company"/>
+     	</record>
+		
 	</data>
 </openerp>

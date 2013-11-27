@@ -17,8 +17,8 @@ class wizz_pj_sel(osv.osv_memory):
     
     _columns = {
                 'naziv':fields.selection(_get_jedinice,'Odabir poslovne jedinice'),
-                'date_start':fields.date('Pocetni datum'),
-                'date_end':fields.date('Zavrsni datum'),
+               # 'date_start':fields.date('Pocetni datum'),
+               # 'date_end':fields.date('Zavrsni datum'),
                # 'kpr_ids':fields.one2many('obrt.kpr','id')
                 }
     
@@ -26,7 +26,7 @@ class wizz_pj_sel(osv.osv_memory):
         if context is None:
             context = {}
         
-        view_ref = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'kpr_hr', 'knjiga_prometa_form_view_pj')
+        view_ref = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'obrt_kpr', 'knjiga_prometa_form_view_pj')
         view_id = view_ref and view_ref[1] or False
         res_id=int(self.read(cr, uid, ids[0])['naziv'])
         return {
