@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Module: l10n_obrt_hr
+#    Module: datacom_obrt
 #    Author: Stjepan Lovasic
 #    mail:   stjepan.lovasic@gmail.com
 #    Copyright (C) 2013 - Datacom d.o.o

@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Module: obrt_kpr
+#    Module: datacom_obrt
 #    Author: Stjepan Lovasic
 #    mail:   stjepan.lovasic@gmail.com
 #    Copyright (C) 

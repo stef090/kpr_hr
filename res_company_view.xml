@@ -78,7 +78,7 @@
 				  action="poslovni_action" 
 				  name="Podaci NKD" 
 				  parent="submenu_obrt" 
-			      sequence="70"/>
+			      sequence="71"/>
 		
 		
 			      			
@@ -87,6 +87,18 @@
 		<record id="pj1" model="obrt.pj">
     		<field name="name">Obrt PJ 1</field>
 			<field name="adresa">Blabla 25</field>
+			<field name="company_id" ref="base.main_company"/>
+     	</record>
+     	
+     	<record id="pj2" model="obrt.pj">
+    		<field name="name">Poslovna jedinica Zagreb</field>
+			<field name="adresa">Vinogradska 24</field>
+			<field name="company_id" ref="base.main_company"/>
+     	</record>
+     	
+     	<record id="pj3" model="obrt.pj">
+    		<field name="name">Poslovna jedinica Samobor</field>
+			<field name="adresa">Tomislavov trg 3</field>
 			<field name="company_id" ref="base.main_company"/>
      	</record>
 		

@@ -27,7 +27,7 @@
 				  action="period_closure_wizard_action" 
 				  name="Zatvaranje perioda" 
 			      string ="Zatvaranje perioda" 	
-				  parent="menu_periodi" 
-			 	  sequence="201"/>	 
+				  parent="submenu_obrt" 
+			 	  sequence="70"/>	 
 	</data>
 </openerp>
